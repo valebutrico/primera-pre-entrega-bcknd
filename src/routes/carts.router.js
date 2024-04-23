@@ -35,7 +35,7 @@ router.post("/:cid/product/:pid", async (req, res) => {
       return res.status(404).json({ error: "Producto no encontrado" });
     }
 
-    await cartManager.addProductToCart(Number(req.params.cid), productId, 1); // Asumiendo que la cantidad es siempre 1 para simplificar
+    await cartManager.addProductToCart(Number(req.params.cid), productId, 1);
     res.json({ message: "Producto agregado al carrito exitosamente" });
   } catch (error) {
     console.error(error);
